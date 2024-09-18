@@ -1,5 +1,8 @@
 package org.example;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Locale;
 import java.util.Objects;
 
 public class Address {
@@ -9,6 +12,10 @@ public class Address {
     private String city;
     private String state;
     private String zip;
+
+    private int birthYear;
+    private int birthMonth;
+    private int birthDay;
 
     public Address() {
     }
@@ -82,4 +89,9 @@ public class Address {
     public int hashCode() {
         return Objects.hash(house, room, street, city, state, zip);
     }
+    public int getAge() {
+        LocalDate birthDate = LocalDate.of(birthYear, birthMonth, birthDay);
+        return Period.between(birthDate, LocalDate.now()).getYears();
+    }
+
 }
