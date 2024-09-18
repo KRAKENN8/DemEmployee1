@@ -85,7 +85,7 @@ public class Person {
         return Objects.hash(name, surname, birthYear, birthMonth, birthDay, address);
     }
 
-    public int age(){
+    public int getAge(){
         // Дата рождения
         LocalDate birthDate = LocalDate.of(birthYear, birthMonth, birthDay);
         // Вычисление возраста
